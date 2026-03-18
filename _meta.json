@@ -1,0 +1,9 @@
+{
+  "owner": "lumi",
+  "slug": "lumi-api",
+  "displayName": "Lumi API Agent Tools",
+  "latestVersion": "0.1.0",
+  "description": "Skill for managing social media content via Lumi REST API — upload videos, publish to TikTok/YouTube/Instagram, translate/dub with localization, check analytics, and repurpose Chinese platform content. All calls via curl.",
+  "timestamp": 1742342400000,
+  "history": []
+}
