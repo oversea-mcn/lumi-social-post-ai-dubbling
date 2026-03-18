@@ -1,6 +1,6 @@
 ---
 name: lumi-api
-description: Use this skill when the user wants to manage social media content via Lumi — uploading videos, publishing to TikTok/YouTube/Instagram, translating or dubbing content, checking account analytics, listing connected accounts, or managing localization tasks. All API calls use curl with Bearer token authentication. Trigger on: "post to TikTok", "upload video", "translate video", "dub video", "check analytics", "list my accounts", "repurpose video", "localize", "list voices", "publish to YouTube", "schedule post".
+description: "Use this skill when the user wants to manage social media content via Lumi — uploading videos, publishing to TikTok/YouTube/Instagram, translating or dubbing content, checking account analytics, listing connected accounts, or managing localization tasks. All API calls use curl with Bearer token authentication. Trigger on: post to TikTok, upload video, translate video, dub video, check analytics, list my accounts, repurpose video, localize, list voices, publish to YouTube, schedule post."
 ---
 
 # Lumi API Agent Skill
