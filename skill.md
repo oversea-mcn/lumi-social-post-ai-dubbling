@@ -46,13 +46,15 @@ metadata:
 | 原始语言 | ✅ 必须 | 视频的语言，如 zh、en、ja |
 | 目标语言 | ✅ 必须 | 要翻译成的语言，如 en、ko、ja、es |
 | 是否配音 | ✅ 必须 | 是否用 AI 声音替换原声（dubbing） |
-| 配音声音 | 配音时必须 | 先调用 `/api/v1/tts` 列出可选声音，让用户选择 |
+| 配音声音 | 配音时必须 | 引导用户访问 [lumipath.cn/voices](https://lumipath.cn/voices) 查看和试听声音后选择 |
 | 是否加字幕 | ✅ 必须 | 是否在视频中烧录翻译字幕（subtitle） |
 | 发布到哪些平台 | ✅ 必须 | TikTok / YouTube / Instagram，可多选 |
 | 发布文案 | ✅ 必须 | 发布时的标题或 caption |
 | YouTube 标题 | 发布到 YouTube 时必须 | YouTube 视频标题 |
 | YouTube 可见性 | 发布到 YouTube 时必须 | public / private / unlisted |
 | TikTok 隐私设置 | 可选 | 默认 PUBLIC_TO_EVERYONE |
+
+> **autoPublish 默认启用**：搬运场景中，只要用户指定了发布平台，必须始终设置 `autoPublish` 字段，无需额外询问用户是否自动发布。
 
 > **禁止跳过参数收集步骤直接发起请求。** 如果用户没有提供某个必要参数，必须主动询问。
 
@@ -62,7 +64,7 @@ metadata:
 
 ### 第三步：获取 TTS 声音列表（如需配音）
 
-调用 `GET /api/v1/tts?language=<目标语言>` 列出可用声音，展示声音名称和性别，让用户选择后记录 `id`。
+引导用户访问 **https://lumipath.cn/voices** 查看所有可用声音（支持试听）。用户选定声音名称后，调用 `GET /api/v1/tts?language=<目标语言>` 匹配对应的 `id`。
 
 ### 第四步：发起搬运任务
 
@@ -83,7 +85,7 @@ autoPublish: {
 
 ### 第六步：完成确认
 
-- `status=completed`：告知用户任务已完成，已自动发布到指定平台。如果 `autoPublish` 未设置，则用 `outputUrl` 手动调用 `POST /api/v1/social-posts` 发布。
+- `status=completed`：告知用户任务已完成，已自动发布到指定平台。
 - `status=failed`：展示 `failureReason`，建议用户重试。
 
 ---
