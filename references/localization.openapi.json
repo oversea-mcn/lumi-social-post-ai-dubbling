@@ -195,5 +195,5 @@
       }
     }
   },
-  "servers": [{ "url": "https://lumipath.cn", "description": "Production" }]
+  "servers": [{ "url": "https://app.lumipath.cn", "description": "Production" }]
 }
